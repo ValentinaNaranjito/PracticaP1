@@ -4,19 +4,20 @@ import data from "./data.js"
 class Appcontainer extends HTMLElement {
     constructor(){
         super();
-        this.attachShadow({mode:"open"});
+        this.attachShadow({mode:'open'});
     }
 
     connectedCallback(){
         this.render();
-        data.forEach((user)=>{
-            this.shadowRoot.innerHTML += `
-            <myprofile name= "${user.name}" id= "${user.id}" city= "${user.addres.city}"></my-profile>`
-        })
+       
     }
 
     render(){
-
+        data.forEach((user)=>{
+            this.shadowRoot.innerHTML += `
+            
+            <my-profile name="${user.name}" uid="${user.id}" city="${user.city}"></my-profile>`
+        })
     }
 }
 
