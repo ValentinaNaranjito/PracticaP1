@@ -14,9 +14,10 @@ class Appcontainer extends HTMLElement {
 
     render(){
         data.forEach((user)=>{
-            this.shadowRoot.innerHTML += `
-            
-            <my-profile name="${user.name}" uid="${user.id}" city="${user.city}"></my-profile>`
+            this.shadowRoot.innerHTML += `  
+            <my-profile name="${user.name}" uid="${user.id}" city="${user.city}"></my-profile>
+            <my-button message = "Registra tu favorito"></my-button>
+            `
         })
     }
 }

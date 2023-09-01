@@ -1,7 +1,8 @@
-class buttonlike extends HTMLElement (){
+class buttonlike extends HTMLElement(){
     constructor(){
         super();
         this.attachShadow({mode:"open"});
+        this.onButtonclicked = this.onButtonclicked.bind(this);
     }
 
     static get observedAttributes(){
@@ -17,8 +18,29 @@ class buttonlike extends HTMLElement (){
 
     Mount(){
     this.Mount();
-    this.addEventListener
-    this.addEventListener();
+    this.addListener();
 }
 
+addListener (){
+    this.shadowRoot.querySelector("button");
+    addEventListener("click",this.onButtonclicked);
 }
+
+render (){
+    this.shadowRoot.innerHTML = `
+    <section>
+        <p>${this.message}</p>
+        <button>Favorito</button>
+    </section>
+    `
+}
+conButtonclicked(){
+    const currentValue = this.getAtribute("message");
+    this.setAttribute ("message","Gracias"); 
+}
+
+
+}
+
+customElements.define("my-button", buttonlike);
+export default buttonlike; 
